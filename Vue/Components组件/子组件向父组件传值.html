@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <com1 v-on:func="show"></com1>
+    </div>
+
+    <template id="tmp1">
+        <div @click="emit">子组件</div>
+    </template>
+    <script>
+        var com1 = {
+            template: '#tmp1',
+            data: function() {
+                return {
+                    msg: "子组件的data"
+                }
+            },
+            methods: {
+                emit() {
+                    this.$emit('func', this.msg, "asddata2")
+                }
+            }
+        }
+
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {
+                show(data, data2) {
+                    console.log("父组件的方法" + data + data2);
+                }
+            },
+            components: {
+                com1
+            }
+        });
+    </script>
+</body>
+
+</html>

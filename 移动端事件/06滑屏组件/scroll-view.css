@@ -1,0 +1,36 @@
+html {
+    font-size: 13.3333vw;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+    font-size: 20px;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+.scroll-view{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 5px solid #000;
+}
+.scroll-view .scroll-list{
+    position: absolute;
+    top: 0;
+    /* transition: top 0.01s; */
+}
+.scroll-view .scroll-list li{
+    line-height: 70px;
+}

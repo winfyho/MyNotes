@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="vue">
+        <!-- <span>{{ name }}</span>
+        <p>{{say('hello')}}</p> -->
+        <!-- 属性绑定 v-bind:   -->
+        <!-- <a v-bind:href="web">baidu</a>
+        <input type="text" v-bind:value="infor">
+        <div v-html="tag"></div> -->
+        <!-- <h6>event</h6>
+
+        鼠标事件
+        <div id="vue">
+            <button v-on:click="plus()">plus {{ age }}</button>
+            <button @dblclick="del()">delete</button>
+            <p>{{age}}</p>
+            <div id="box" v-on:click="changeColor" v-bind:class="color">
+                {{color}}
+            </div>
+            <p>{{color}}</p>
+        </div> -->
+
+        <!-- 键盘事件  数据双向绑定v-model-->
+        <input ref="username" type="text" v-model="username">
+        <input ref="password" type="text" @keydown="getUP"><br>
+        <span>{{username}}</span><br>
+        <span>{{password}}</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

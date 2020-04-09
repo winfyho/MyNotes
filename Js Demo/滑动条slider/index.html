@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .drop {
+        position: relative;
+        margin: 100px auto;
+        width: 300px;
+        padding: 0px 15px;
+        height: 30px;
+        border: 1px solid #000;
+    }
+    
+    .drop .drop-track {
+        position: absolute;
+        top: 50%;
+        margin-top: -2px;
+        width: 300px;
+        height: 5px;
+        background: #666;
+    }
+    
+    .drop .drop-track .vol {
+        width: 150px;
+        height: 100%;
+        background: #f00;
+        position: absolute;
+    }
+    
+    .drop .drop-track .vol .drop-btn {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 1px solid #000;
+        position: absolute;
+        right: -5px;
+        top: -2px;
+    }
+    
+    .drop .drop-track .vol .drop-btn>span {
+        position: absolute;
+        bottom: 10px;
+    }
+</style>
+
+<body>
+
+    <div class="drop">
+        <div class="drop-track">
+
+            <div class="vol">
+                <div class="drop-btn">
+                    <span>50</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="drop.js"></script>
+
+</html>

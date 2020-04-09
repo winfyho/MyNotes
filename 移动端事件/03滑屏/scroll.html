@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     html {
+        font-size: 13.3333vw;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    ul,li{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .scroll-view{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        box-sizing: border-box;
+        border: 5px solid #000;
+    }
+    .scroll-view .scroll-list{
+        position: absolute;
+        top: 0;
+        /* transition: top 0.01s; */
+    }
+    .scroll-view .scroll-list li{
+        line-height: 70px;
+    }
+</style>
+<body>
+    <div class="scroll-view" id="scroll-view">
+        <ul class="scroll-list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+        </ul>
+    </div>
+</body>
+<script>
+    const ScrollView = document.getElementsByClassName('scroll-view')[0]
+    const ScrollList = document.getElementsByClassName('scroll-list')[0]
+
+    let startPointY = 0
+        startTop = 0
+        movePointY = 0
+    
+    ScrollView.addEventListener('touchstart',(event) => {
+        event.preventDefault()
+        startPointY = event.changedTouches[0].clientY
+        startTop = parseInt(window.getComputedStyle(ScrollList).top)
+        console.log(window.getComputedStyle(ScrollList).top,event.changedTouches[0].clientY)
+        
+    })
+
+    ScrollView.addEventListener('touchmove',(event) => {
+        event.preventDefault()
+        movePointY = event.changedTouches[0].clientY - startPointY
+        ScrollList.style.top = startTop + movePointY +'px'
+        console.log(event.changedTouches[0].clientY)
+        
+    })
+
+    ScrollView.addEventListener('touchend',(event) => {
+        console.log(event.changedTouches[0].clientY)
+        
+    })
+
+    function Transform(domElement){
+
+    }
+</script>
+</html>

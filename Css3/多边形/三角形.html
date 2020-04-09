@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin: 30px;
+    border-width: 30px;
+    border-color: #000;
+}
+.triangle-top{
+    border-color: #000 transparent transparent transparent;
+}
+.triangle-right{
+    border-color:  transparent #000 transparent transparent;
+}
+.triangle-bottom{
+    border-color:  transparent transparent #000 transparent;
+}
+.triangle-left{
+    border-color:  transparent transparent transparent #000;
+}
+.triangle-eq{
+    border-width: 100px 173px;
+    border-color:  transparent rgb(6, 112, 250) transparent transparent ;
+}
+.triangle-two{
+    border-width: 100px 80px;
+    border-color:  transparent  transparent rgb(6, 112, 250) transparent ;
+}
+</style>
+<body>
+    <div class="triangle triangle-top"></div>
+    <div class="triangle triangle-right"></div>
+    <div class="triangle triangle-top"></div>
+    <div class="triangle triangle-left"></div>
+    <div class="triangle triangle-eq"></div>
+    <div class="triangle triangle-two"></div>
+</body>
+</html>

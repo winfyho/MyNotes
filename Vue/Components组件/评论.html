@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>评论</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+<style>
+    ul {
+        list-style: none;
+        background: #d4d4d4;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <comment @func="loadComment"></comment>
+        <ul>
+            <li v-for="item in list" :key="item.id">
+                <span>{{item.user}}:</span><span>{{item.content}}</span>
+            </li>
+        </ul>
+    </div>
+
+    <template id="comment">
+        <div>
+            <label>
+                评论人
+                <input type="text" v-model="user">
+            </label>
+            <label>
+                评论内容
+                <textarea name="" id="" cols="30" rows="10" v-model="content"></textarea>
+            </label>
+            <label>
+                    
+                <input type="button" value="发表" @click="postCom">
+            </label>
+            
+        </div>
+    </template>
+    <script>
+        var comment = {
+            template: '#comment',
+            data: function() {
+                return {
+                    user: "",
+                    content: "",
+
+                }
+            },
+
+            methods: {
+                postCom() {
+                    var comment = {
+                        id: Date.now(),
+                        user: this.user,
+                        content: this.content
+                    }
+                    var list = JSON.parse(localStorage.getItem('cmts') || '[]');
+                    list.unshift(comment);
+                    localStorage.setItem('cmts', JSON.stringify(list));
+                    this.user = this.content = "";
+                    this.$emit('func')
+                }
+            }
+        }
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: false,
+                list: [{
+                    id: Date.now(),
+                    user: "李白",
+                    content: "这是一条评论"
+                }, {
+                    id: Date.now(),
+                    user: "李白",
+                    content: "这是一条评论"
+                }, ]
+
+            },
+            created() {
+                this.loadComment();
+            },
+            methods: {
+                loadComment() {
+                    var list = JSON.parse(localStorage.getItem('cmts') || '[]');
+                    this.list = list;
+                }
+            },
+            components: {
+                'comment': comment
+            }
+        });
+    </script>
+</body>
+
+</html>

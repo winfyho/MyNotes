@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let number = 56021;
+    number = String(number)
+    let unit = ['','十','百','千','万']
+    let num_cn = ['零','一','二','三','四','五','六','七','八','九','十']
+    let results = []
+    let flag = true
+    for (let i = 0; i < number.length; i++) {
+        
+        let unit_index = number.length - i;
+        let num_eng = parseInt(number[i])
+        if(num_eng === 0 && flag === false){
+            results.push('零');
+            console.log('零');
+            flag = true
+
+        }else{
+            results.push(`${num_cn[num_eng]}${unit[unit_index-1]}`);
+
+            console.log(num_cn[num_eng],unit[unit_index-1]);
+            flag = false
+
+        }
+    }
+    console.log(results);
+    
+
+</script>
+</html>

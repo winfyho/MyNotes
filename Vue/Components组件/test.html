@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <Login ref="login" />
+    </div>
+    <script>
+
+        var login = {
+            template: `<div>login</div>`,
+            data: function () {
+                return {
+                    msg: "子组件的data"
+                }
+            },
+        };
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {},
+            components: {
+                Login: login
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

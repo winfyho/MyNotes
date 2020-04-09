@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./calendar.css">
+</head>
+<body>
+    <div class="calendar" id="calendar">
+
+        <div class="header">
+            <span event="pre-year" class="picker-btn picker-pre-year"></span>
+            <span event="pre-month" class="picker-btn picker-pre-month"></span>
+            <span event="2020" class="picker-btn picker-date">2020年2月</span>
+            <span event="next-month" class="picker-btn picker-next-month"></span>
+            <span event="next-year" class="picker-btn picker-next-year"></span>
+        </div>
+
+        <div class="week">
+            <span>一</span>
+            <span>二</span>
+            <span>三</span>
+            <span>四</span>
+            <span>五</span>
+            <span>六</span>
+            <span>日</span>
+        </div>
+
+        <div class="content" id="calendar-content">
+            
+        </div>
+
+    </div>
+    
+</body>
+<script src="./calendar.js"></script>
+<script>
+    calendar.init()
+</script>
+</html>

@@ -1,0 +1,48 @@
+.song-sheet{
+    box-sizing: border-box;
+    background: #666;
+    color: #fff;
+    /* box-shadow: 15px 0px 30px rgba(255, 255, 255, 0.8) */
+}
+.song-sheet>ul{
+    width: 100%;
+}
+.song-sheet>ul li{
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+}
+
+.song-sheet>ul li.choosed{
+    background: #555;
+    font-size: 18px;
+}
+/* .song-sheet>ul li.choosed:hover{
+    background: #333;
+}
+.song-sheet>ul li:hover{
+    background: #333;
+} */
+.song-sheet .add-sheet-btn{
+    box-sizing: border-box;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #3B3C40;
+    color: #86BAA3;
+    cursor: cell;
+}
+.song-sheet .add-sheet-btn .sheet-name-input{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: #3B3C40;
+    color: #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    outline: none;
+    border: none;
+}

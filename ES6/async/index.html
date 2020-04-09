@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    getName().then(res => {
+        console.log(res);
+        document.write(res)
+        
+    }).catch(err => {
+        console.log(err);
+        document.write(err)
+
+    })
+    async function getName(){
+        let num = 0;
+        
+        return  await new Promise((resolve,reject)=>{
+            num = 3;
+            resolve(num)
+        })
+
+        // throw new Error('出错了')
+        
+    }
+</script>
+</html>

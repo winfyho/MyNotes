@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html {
+        font-size: 13.3333vw;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul,
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .banner {
+        position: relative;
+        width: 100vw;
+        height: 160px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .banner .wrap {
+        position: absolute;
+        /* top: 0;
+        left: 0; */
+        display: flex;
+        width: 800vw;
+        height: 100%;
+        font-size: 0;
+        overflow: hidden;
+
+    }
+
+    .banner .wrap li div {
+        width: 100vw;
+        height: 150px;
+        font-size: 100px;
+        color: #00f;
+        text-align: center;
+        box-sizing: border-box;
+        border: 2px solid #0f0;
+    }
+
+    .banner .circles {
+        position: absolute;
+        width: 100%;
+        /* height: 60px; */
+        display: flex;
+        justify-content: center;
+        bottom: 3vw;
+        /* background: rgba(0, 0, 0, .3); */
+    }
+
+    .banner .circles span {
+        display: inline-block;
+        width: 4vw;
+        height: 4vw;
+        border-radius: 50%;
+        background: #aaa;
+        margin: 0 10px;
+    }
+    .banner .circles span.active{
+        background: #00f;
+    }
+</style>
+
+<body>
+    <div class="banner" id="banner">
+        <ul class="wrap">
+            <li>
+                <div>111</div>
+            </li>
+            <li>
+                <div>222</div>
+            </li>
+            <li>
+                <div>333</div>
+            </li>
+            <li>
+                <div>444</div>
+            </li>
+        </ul>
+        <div class="circles">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+<script>
+    const Banner = document.getElementsByClassName('banner')[0]
+    const Wrap = document.getElementsByClassName('wrap')[0]
+    const Circles = document.getElementsByClassName('circles')[0]
+    Wrap.innerHTML += Wrap.innerHTML
+
+    let startPointX = 0
+        startX = 0
+        movePointX = 0
+        // imgWidth = Banner.offsetWidth
+        cn = 0
+
+
+    Wrap.moveTo = function (cn) {
+        // this.style.left = -(imgWidth * cn) + 'px'
+        this.style.transform = `translateX(${-(imgWidth * cn) + 'px'})`
+        Circles.render(cn % (this.children.length / 2))
+
+    }
+    
+
+    Circles.render = function (curIndex) {
+        let tem = ``
+        for (let i = 0; i < Wrap.children.length / 2; i++) {
+            if (i === curIndex) {
+                tem += `<span class="active"></span>`
+            } else {
+                tem += `<span></span>`
+            }
+
+        }
+        this.innerHTML = tem
+    }
+    Circles.render(0)
+
+
+    Banner.addEventListener('touchstart', (event) => {
+        event.preventDefault()
+        Wrap.style.transition = ''
+        startPointX = event.changedTouches[0].clientX
+
+        if (cn === 0) {
+
+            cn = Wrap.children.length / 2
+        }
+        if (cn === Wrap.children.length - 1) {
+
+            cn = Wrap.children.length / 2 - 1
+        }
+
+        Wrap.moveTo(cn)
+
+        startX = parseInt(window.getComputedStyle(Wrap).transform.substring(7).split(',')[4])
+
+
+    })
+
+    Banner.addEventListener('touchmove', (event) => {
+        event.preventDefault()
+        movePointX = event.changedTouches[0].clientX - startPointX
+        Wrap.style.transform = `translateX(${startX + movePointX + 'px'})`
+
+    })
+
+    Banner.addEventListener('touchend', (event) => {
+
+        Wrap.style.transition = '.3s'
+        let delta = Math.abs(movePointX / imgWidth)
+        console.log(delta)
+
+        if (delta > 0.3) {
+
+            cn = movePointX > 0 ? cn - 1 : cn + 1
+            Wrap.moveTo(cn)
+
+        } else if (delta > 0 && delta < 0.3) {
+            Wrap.moveTo(cn)
+
+        }
+        movePointX = 0
+        console.log(cn)
+
+    })
+
+
+</script>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css">
+    
+    <link rel="stylesheet" href="./css/320.css" media="all and (min-width:320px) and (max-width:768px)">
+    <link rel="stylesheet" href="./css/768.css" media="all and (min-width:768px)" >
+    <link rel="stylesheet" href="./css/1024.css" media="all and (min-width:1025px)">
+
+</head>
+<style>
+    /* @import url('./css/320.css') (mix-width:320px);
+    @import url('./css/768.css') (mix-width:768px);
+    @import url('./css/1024.css') (mix-width:1024px); */
+   
+
+    
+
+    /* 宽度小于768，消失侧边栏 */
+    /* @media (max-width: 767px) {
+        button {
+            display: block;
+        }
+
+        nav {
+            display: none;
+        }
+    } */
+
+    /* ipad，且为竖屏 */
+    /* @media (max-width: 1024px) and (min-width: 768px) and (orientation:portrait) {
+        div {
+            background: #f40;
+        }
+
+        div::after {
+            content: "现在是ipad竖屏";
+            font-size: 50px;
+        }
+    } */
+
+    /* 手机竖屏 */
+    /* @media (max-width: 540px) and (orientation:portrait) {
+        div {
+            width: 100%;
+            background: #0f0;
+        }
+
+        div::after {
+            content: "现在是移动端竖屏";
+            font-size: 50px;
+        }
+    } */
+</style>
+
+<body>
+    
+
+    <div id="app">
+
+        <div class="nav"><button class="btn-slider-bar">目录</button>导航栏</div>
+
+        <div class="view">
+
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            
+        </div>
+
+        <!-- <div class="slider-bar">侧边栏</div> -->
+
+        <div class="tab-bar">
+            <ul>
+                <li>首页</li>
+                <li>笔记</li>
+                <li>资料</li>
+                <li>足迹</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

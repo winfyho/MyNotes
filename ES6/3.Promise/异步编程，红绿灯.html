@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background: #999;
+    }
+</style>
+
+<body>
+
+</body>
+<script>
+    var div = document.createElement('div')
+    document.body.appendChild(div)
+
+    function sleep(duration) {
+        return new Promise((resolve, reject) => {
+            setTimeout(resolve, duration)
+        })
+    }
+    async function changeColor(duration, color) {
+        div.style.background = color
+        await sleep(duration)
+
+    }
+
+    async function init() {
+        timer = setInterval(() => {
+            console.log(new Date().getSeconds());
+            div.innerHTML = new Date().getSeconds()
+
+        }, 1000)
+ 
+        while (true) {
+            await changeColor(6000, "green")
+            await changeColor(4000, "yellow")
+            await changeColor(2000, "red")
+        }
+
+    }
+    init()
+
+
+
+
+
+
+
+
+
+
+
+
+    // function changeColor(dom, color, duration) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             dom.style.background = color
+    //             resolve()
+
+    //         }, duration)
+    //     })
+    // }
+    // 
+    // let timer = null
+    // function init() {
+    //     if (timer) {
+    //         clearInterval(timer)
+    //     }
+    //     timer = setInterval(() => {
+    //         console.log(new Date().getSeconds());
+    //         div.innerHTML = new Date().getSeconds()
+
+    //     }, 200)
+
+    //     changeColor(div, "yellow", 3000).then(() => {
+    //         changeColor(div, "red", 2000).then(() => {
+    //             changeColor(div, "green", 1000).then(() => {
+    //                 init()
+    //             })
+    //         })
+    //     })
+    // }
+    // init()
+
+</script>
+
+</html>

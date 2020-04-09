@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>手写路由</h1>
+    <!-- <div>
+        <h2>history模式</h2>
+        <nav id="history">
+            <a onclick="changeRoute(this)" data-name="首页" data-path="/home">首页</a>
+            <a onclick="changeRoute(this)" data-name="个人页" data-path="/profile">个人页</a>
+            <a onclick="changeRoute(this)" data-name="帮助页" data-path="/about">帮助页</a>
+        </nav>
+    </div> -->
+
+    <div>
+        <h2>hash模式</h2>
+        <nav id="hash">
+            <a href="#home" data-name="首页" data-path="/home">首页</a>
+            <a href="#profile" data-name="个人页" data-path="/profile">个人页</a>
+            <a href="#about" data-name="帮助页" data-path="/about">帮助页</a>
+        </nav>
+    </div>
+    <h1 id="router-view"></h1>
+</body>
+<!-- <script src="./hash.js" type="module"> -->
+    
+    
+</script>
+<script type="module">
+    import router from "./router.js"
+    console.log(router);
+</script>
+<!-- <script src="./history.js" ></script> -->
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script type="module">
+    import { MyPromise } from "./01.js"
+    new MyPromise((resolve, reject) => {
+        // console.log(resolve,reject);
+        
+        // reject("err 404")
+
+        resolve({
+            name:"winfyho",
+            age:18
+        })
+    })
+    .catch(err => {
+        console.log(err);
+    })
+    .then(res => {
+        console.log("得到的res ->",res);   
+    })
+    
+    
+    
+    
+    
+</script>
+
+</html>

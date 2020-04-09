@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="lib/vue-2.4.0.js"></script>
+
+    <script src="lib/vue-router-3.0.1.js"></script>
+</head>
+<style>
+    .myactive {
+        color: red;
+        font-weight: 600;
+    }
+    
+    .v-enter,
+    .v-leave-to {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    
+    .v-enter-active,
+    .v-leave-active {
+        transition: all 1s ease;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <!-- <a href="#/login">login</a>
+        <a href="#/sign">sign</a> -->
+        <router-link to="/login" tag="span">login</router-link>
+        <router-link to="/sign" tag="span">sign</router-link>
+
+        <transition mode="out-in">
+            <router-view></router-view>
+
+
+        </transition>
+
+    </div>
+    <script>
+        var login = {
+            template: '<div>login</div>'
+        }
+        var sign = {
+            template: '<div>sign</div>'
+        }
+        var rou = new VueRouter({
+            // route为路由配置规则
+            routes: [
+
+                {
+                    path: '/',
+                    redirect: '/sign'
+                }, {
+                    path: '/login',
+                    component: login
+                }, {
+                    path: '/sign',
+                    component: sign
+                }
+            ],
+            linkActiveClass: 'myactive'
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {},
+            router: rou
+        });
+    </script>
+</body>
+
+</html>

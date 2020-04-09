@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>audio播放器</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/song_sheet.css">
+    <link rel="stylesheet" href="./css/song_list.css">
+    <link rel="stylesheet" href="./css/songs.css">
+    <link rel="stylesheet" href="./css/audio.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+
+
+        <!-- 歌单列表 -->
+        <div class="song-sheet">
+
+            <ul class="list">
+
+            </ul>
+
+            <div class="add-sheet-btn">
+                <span class="btn-title">创建歌单</span>
+                <input type="text" class="sheet-name-input" placeholder="输入歌单名称">
+            </div>
+
+        </div>
+
+        <!-- 歌单详情 -->
+        <div class="song-list">
+
+            <!-- 信息 -->
+            <div class="infor-area">
+
+                <h2 class="list-name"></h2>
+
+                <div class="bottom">
+
+                    <div class="add-btn">
+                        <span>添加歌曲</span>
+                        <input type="file" id="file" accept="audio/*" multiple="true" alt="" title="">
+                    </div>
+
+                </div>
+            </div>
+            <!-- 导航栏 -->
+            <div class="tab-bar">
+                <a>歌曲</a>
+                <a>排序</a>
+            </div>
+
+            <!-- 歌曲列表 -->
+            <div class="songs">
+
+                <div class="title">
+                    <i>歌曲</i>
+                    <i>歌手</i>
+                    <i>信息</i>
+                </div>
+
+                <ul class="list songs-ul">
+                    <!-- <li>
+                        <span class="song">哪里只得我共你</span>
+                        <span class="singer">Dear Jane</span>
+                        <span class="infor">Remix</span>
+
+                    </li> -->
+                    
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- 播放器 -->
+        <div class="audio">
+
+            <audio id="audio" loop="true"></audio>
+
+
+            <span class="ctrl last last-btn"></span>
+            <span class="ctrl loading play-btn"></span>
+            <span class="ctrl next next-btn"></span>
+
+            <div class="play-music">
+
+                <div class="infor" id="song-name">3am</div>
+
+                <div class="time">
+
+                    <div class="outer">
+                        <span class="inner time-inner"></span>
+                        <input type="range" class="time-slider" value="0">
+                    </div>
+
+                    <div class="time-area">
+                        <span class="currentTime">0:00</span> / <span class="duration">0:00</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <span class="ctrl mode mode-btn"></span>
+
+
+            <div class="volume">
+
+                <i class="ctrl volume-icon mute-btn"></i>
+
+                <div class="outer">
+                    <span class="volume-inner"></span>
+                    <input type="range" class="volume-slider">
+
+                </div>
+
+                <span class="volume-num"></span>
+            </div>
+
+
+        </div>
+
+        <!-- 界面交互 -->
+        <div class="toast" id="toast">
+            <span class="icon"></span>
+
+            <span class="title">文本内容</span>
+        </div>
+
+    </div>
+
+</body>
+<script src="./js/index.js" type="module"></script>
+<script src="./js/audio.js" type="module"></script>
+
+</html>

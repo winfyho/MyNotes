@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+
+<body>
+
+    <div id="vue">{{msg|format(" 666 ")| format2(' 这是format2')}}</div>
+
+    <script>
+        Vue.filter('format', function(data, str) {
+            return data + str;
+        })
+        Vue.filter('format2', function(data, str) {
+            return data + str;
+        })
+
+        new Vue({
+            el: "#vue",
+            data: {
+                msg: "你好过滤器",
+            }
+        })
+    </script>
+</body>
+
+</html>

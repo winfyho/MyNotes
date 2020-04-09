@@ -1,0 +1,41 @@
+.nav{
+    width: 100%;
+    height: 100px;
+    background: #eee;
+}
+.nav .btn-slider-bar{
+    display: none;
+}
+.view{
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    background: #fff;
+}
+.view ul{
+    width: 100%;
+    /* height: 600px; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.view ul li{
+    margin-bottom: 20px;
+    width: 30%;
+    padding-top: 22%;
+    background: #524F1E;
+}
+
+
+.slider-bar{
+    position: fixed;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    background: pink;
+}
+
+.tab-bar{
+    display: none;
+}

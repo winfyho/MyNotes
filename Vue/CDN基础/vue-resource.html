@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="lib/vue-resource-1.3.4.js"></script>
+
+</head>
+
+<body>
+
+    <div id="vue">
+        <input type="button" value="click" @click="getInfor">
+        <input type="button" value="post" @click="postInfor">
+        <input type="button" value="jsonp" @click="jsonpInfor">
+    </div>
+
+    <script>
+        new Vue({
+            el: "#vue",
+            data: {},
+            methods: {
+                getInfor() {
+                    this.$http.get('http://jsonplaceholder.typicode.com/posts').then(function(data) {
+                        console.log(data.body);
+                    });
+                },
+                postInfor() {
+                    this.$http.post('http://jsonplaceholder.typicode.com/posts', {}, {
+                        emulateJSON: true
+                    }).then(function(data) {
+                        console.log(data.body);
+                    })
+                },
+                jsonpInfor() {
+                    this.$http.jsonp('http://jsonplaceholder.typicode.com/posts').then(function(data) {
+                        console.log(data);
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

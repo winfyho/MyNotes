@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./scroll-view.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="scroll-view" id="scroll-view">
+        <ul class="scroll-list" id="wrap">
+
+        </ul>
+    </div>
+</body>
+<script type="module">
+    import { css } from "./css.js"
+
+    // let scroll = {
+    //     wrap,
+    //     dir:'y',
+    //     start(){},
+    //     end(){},
+    // }
+
+    const ScrollInit = function ({ ScrollView, dir = 'y', start, end }) {
+        let scroll = ScrollView.children[0]
+        let startPoint = {}
+        let distance = {}
+        let startEle = {}
+        let targetEle = {}
+        for (let i = 0; i < 30; i++) {
+            let li = document.createElement('li')
+            li.innerHTML = `<a href="">这是一个很长的列表${i}</a>`
+            scroll.appendChild(li)
+        }
+
+
+        ScrollView.addEventListener('touchstart', (ev) => {
+            start && start.call(ScrollView, ev)
+
+            startPoint = {
+                x: ev.changedTouches[0].clientX,
+                y: ev.changedTouches[0].clientY,
+            }
+            startEle = {
+                x: css(scroll, 'translateX'),
+                y: css(scroll, 'translateY'),
+            }
+
+        })
+
+        ScrollView.addEventListener('touchmove', (ev) => {
+            distance = {
+                x: ev.changedTouches[0].clientX - startPoint.x,
+                y: ev.changedTouches[0].clientY - startPoint.y,
+            }
+            targetEle = {
+                x: startEle.x + distance.x,
+                y: startEle.y + distance.y,
+            }
+            css(scroll,{
+                ['translate'+dir.toUpperCase()]:targetEle[dir]
+            })
+        })
+
+
+
+        ScrollView.addEventListener('touchend', (ev) => {
+            end&&end(ScrollView,ev)
+
+        })
+
+
+
+    }
+    ScrollInit({
+        ScrollView: document.getElementById('scroll-view'),
+        start(ev) {
+            console.log('手指按下', this, ev.changedTouches[0].clientX)
+
+        },
+        end(ev) {
+            console.log('手指抬起')
+
+        }
+    })
+
+
+
+</script>
+
+</html>

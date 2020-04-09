@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script type="module">
+    // import Ajax from "./ajax.js"
+    // Ajax.get({
+    //     url:"http://jsonplaceholder.typicode.com/posts"
+    // }).then(res => {
+    //     console.log("promise回调then",res);
+        
+    // }).catch(err => {
+    //     console.log(err);
+    // })
+
+    import {ajax} from "./ajax.js"
+
+    ajax({
+        url:"http://jsonplaceholder.typicode.com/posts",
+        method:"GET",
+        timeout:4000,
+    }).then(res => {
+        console.log('ajax请求',res);
+    }).catch(err=>{
+        console.log(err);
+        
+    })
+    
+
+</script>
+
+</html>

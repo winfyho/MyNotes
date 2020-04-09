@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-if</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- <div id="vue">
+        <button @click="success=true">success</button>
+        <button @click="success=false">error</button>
+        <p v-if="success">连接成功</p>
+        <p v-else-if="!success">连接失败</p>
+        <p v-else="success">正在连接</p>
+    </div> -->
+
+    <div id="vue">
+        <ul>
+            <li v-for="a in list">{{a.name}}</li>
+        </ul>
+        <template v-for="(user,i) in list">
+            <p>{{i}}</p><h6>{{user.name}}</h6><h1>{{user.age}}</h1>
+        </template>
+        <template v-for="a in list">
+                <div v-for="(val,key) in a">
+                        <p>{{key}}</p>
+                        <h6>{{val}}</h6>
+                </div>
+            </template>
+    </div>
+</body>
+<script>
+    var vue = new Vue({
+        el: "#vue",
+        data: {
+            success: "loading",
+            list: [{
+                name: "he",
+                age: 18,
+            }, {
+                name: "she",
+                age: 25,
+            }, {
+                name: "me",
+                age: 30,
+            }, ]
+        },
+        methods: {
+            greet: function() {
+
+            }
+        },
+    });
+</script>
+
+</html>

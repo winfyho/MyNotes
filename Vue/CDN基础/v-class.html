@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>vue组件</title>
+</head>
+<style>
+    #vue>div {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        border: 1px solid #000;
+    }
+    
+    .red {
+        background-color: #f00;
+    }
+    
+    .blue {
+        background-color: #00f;
+    }
+    
+    .greem {
+        background-color: #0f0;
+    }
+    
+    .bigfont {
+        font-size: 30px;
+    }
+    
+    .bold {
+        font-weight: 800;
+    }
+</style>
+
+<body>
+    <!--第一种方式 v-bind:class="['red','blue']" 
+        第二种方式 :class="['greem',{bigfont:bigfont}]" 数组内混合使用
+        第三种方式 :class="{
+            red:red,
+            bigfont:bigfont,
+            bold:bold
+        }" 直接使用对象
+        第四种方式 v-bind:style="styleobj1" 在data中设置style对象
+
+        第五种方式 v-bind:style="styleobj1" 在data中设置style对象
+
+    -->
+    <div id="vue">
+        <div :class="['red','bigfont']">1</div>
+        <div :class="['greem',{bigfont:bigfont}]">2</div>
+        <div :class="{
+            red:red,
+            bigfont:bigfont,
+            bold:bold
+        }">3</div>
+
+        <div v-bind:style="styleobj1">style</div>
+        <div :style="[styleobj1,styleobj2]">666</div>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: "#vue",
+        data: {
+            bigfont: true,
+            red: true,
+            bold: true,
+            styleobj1: {
+                'color': '#f61111',
+                'font-weight': '600'
+            },
+            styleobj2: {
+                'color': '#00f',
+                'font-weight': '900'
+            },
+        }
+    });
+</script>
+
+</html>

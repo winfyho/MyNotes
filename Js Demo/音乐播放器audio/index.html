@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>audio播放器</title>
+    <link rel="stylesheet" href="./css/style.css    ">
+    <link rel="stylesheet" href="./css/audio.css">
+</head>
+
+<body>
+
+    <audio controls="controls" id="audio" loop="true"></audio>
+
+    <div class="audio">
+
+        <span class="ctrl last"></span>
+        <span class="ctrl play play-btn"></span>
+        <span class="ctrl next"></span>
+
+        <div class="play-music">
+
+            <div class="infor">3am</div>
+
+            <div class="time">
+
+                <div class="outer">
+                    <span class="inner time-inner"></span>
+                    <input type="range" class="time-slider" value="0">
+                </div>
+
+                <div class="time-area">
+                    <span class="currentTime">0:00</span> / <span class="duration">0:00</span>
+                </div>
+            </div>
+
+        </div>
+
+        <span class="ctrl mode mode-btn"></span>
+
+
+        <div class="volume">
+
+            <i class="ctrl volume-icon"></i>
+
+            <div class="outer">
+                <span class="volume-inner"></span>
+                <input type="range" class="volume-slider">
+
+            </div>
+
+            <span class="volume-num"></span>
+        </div>
+
+
+    </div>
+
+</body>
+<script src="./js/audio.js"></script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    div{
+        width: 100px;
+        height: 100px;
+        background: #f00;
+        color: #0f0;
+        opacity: 0.8;
+    }
+</style>
+<body>
+    <div id="app"></div>
+</body>
+<script type="module">
+    import {css} from "./style.js"
+    const dom = document.getElementById('app')
+    
+    css(dom,'width')
+    console.log('width',css(dom,'width'))
+    console.log('height',css(dom,'height'))
+    console.log('opacity',css(dom,'opacity'))
+    console.log('color',css(dom,'color'))
+    console.log('scale',css(dom,'scale'))
+    console.log('translateX',css(dom,'translateX'))
+
+    css(dom,{
+        scale:2,
+        translateX:100,
+        translateY:200,
+        rotateX:200
+    })
+    
+    
+
+    
+    
+</script>
+</html>

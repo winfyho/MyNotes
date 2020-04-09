@@ -1,0 +1,167 @@
+.audio{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    /* max-width: 1200px;
+    min-width: 1000px; */
+    width: 1000px;
+    height: 100px;
+    background: #555;
+    display: flex;
+    box-sizing: border-box;
+    padding: 30px 20px;
+}
+.ctrl{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin:  0 15px;
+    cursor: pointer;
+    background-size: 30px 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.last{
+    background-image: url(../images/last_icon.png);
+}
+.last:hover{
+    background-image: url(../images/last.png);
+}
+.play{
+    background-image: url(../images/play_icon.png);
+    background-size: 49px 49px;
+}
+.play:hover{
+    background-image: url(../images/play.png);
+    background-size: 49px 49px;
+}
+.pause{
+    background-image: url(../images/pause_icon.png);
+    background-size: 60px 60px;
+}
+.pause:hover{
+    background-image: url(../images/pause.png);
+    background-size: 60px 60px;
+}
+.loading{
+    background-image: url(../images/loading_icon.png);
+    background-size: 40px 40px;
+}
+.loading:hover{
+    background-image: url(../images/loading.png);
+    background-size: 40px 40px;
+}
+.next{
+    background-image: url(../images/next_icon.png);
+}
+.next:hover{
+    background-image: url(../images/next.png);
+}
+
+/* 时间进度条 */
+.play-music{
+    margin-top: -2px;
+    flex: 1 1 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.play-music .infor{
+    line-height: 15px;
+    padding-bottom: 8px;
+    color: #eee;
+}
+.play-music .time{
+    display: flex;
+}
+.play-music .time .outer{
+    position: relative;
+    height: 15px;
+    font-size: 0;
+    flex: 1 1 auto;
+}
+.play-music .time .outer .inner{
+    display: block;
+    position: absolute;
+    width: 0%;
+    height: 15px;
+    background: #86BAA3;
+    height: 15px;
+    z-index: 1;
+    border-radius: 10px;
+}
+.play-music .time .time-slider{
+    width: 100%;
+    margin: 0;
+    z-index: 2;
+}
+.play-music .time .time-area{
+    flex: 0 0 auto;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #ccc;
+    line-height: 14px;
+}
+
+
+/* 音量条 */
+.volume{
+    position: relative;
+    flex: 0 0 180px;
+    display: flex;
+}
+.volume .volume-icon{
+    flex: 0 0 40px;
+    margin: 0 10px 0 20px;
+    background-image: url(../images/volume_icon.png);
+    background-size: 40px 40px;
+}
+.volume .outer{
+    position: relative;
+    height: 10px;
+}
+.volume .outer .volume-inner{
+    position: absolute;
+    top: 15px;
+    border-radius: 10px;
+    width: 100%;
+    height: 10px;
+    background: #86BAA3;
+}
+.volume .outer .volume-slider{
+    flex: 1 1 auto;
+    width: 100%;
+    height: 10px;
+    margin: 15px 0;
+}
+.volume .volume-num{
+    position: absolute;
+    top: -12px;
+    right: 0;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+.mode{
+    flex: 0 0 40px;
+    background-image: url(../images/loop_icon.png);
+}
+.mode:hover{
+    background-image: url(../images/loop.png);
+    cursor: pointer;
+}
+.loop{
+    background-image: url(../images/loop_icon.png);
+}
+.loop:hover{
+    background-image: url(../images/loop.png);
+}
+.order{
+    background-image: url(../images/order_icon.png);
+}
+.order:hover{
+    background-image: url(../images/order.png);
+}

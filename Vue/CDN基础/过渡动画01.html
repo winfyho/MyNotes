@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<style>
+    .v-enter,
+    .v-leave-to {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    
+    .v-enter-active,
+    .v-leave-active {
+        transition: all 1s ease;
+    }
+    
+    .test2-enter,
+    .test2-leave-to {
+        opacity: 0.5;
+        transform: translateY(80px);
+    }
+    
+    .test2-enter-active,
+    .test2-leave-active {
+        transition: all 1s ease;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <input type="button" value="click" @click="flag= !flag">
+
+        <transition>
+            <h1 v-show="flag">hello</h1>
+
+        </transition>
+
+        <transition name="test2">
+            <h1 v-show="flag">hello</h1>
+
+        </transition>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: false
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

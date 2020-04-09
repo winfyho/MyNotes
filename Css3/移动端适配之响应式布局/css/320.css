@@ -1,0 +1,52 @@
+.nav{
+    width: 100%;
+    height: 100px;
+    background: #eee;
+}
+.view{
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    background: #fff;
+}
+.slider-bar{
+    display: none;
+}
+.btn-slider-bar{
+    display: block;
+}
+
+.view ul{
+    width: 100%;
+    /* height: 600px; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.view ul li{
+    margin-bottom: 20px;
+    width: 100%;
+    padding-top: 60%;
+    background: #524F1E;
+}
+
+.tab-bar{
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 55px;
+    display: block;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, .3);
+}
+.tab-bar ul{
+    display: flex;
+}
+.tab-bar ul li{
+    box-sizing: border-box;
+    text-align: center;
+    width: 25%;
+    line-height: 55px;
+}

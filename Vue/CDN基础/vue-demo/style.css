@@ -1,0 +1,28 @@
+#img {
+    width: 200px;
+    height: 500px;
+    margin: 0 auto;
+    background-image: url(img/saleimg2.jpg);
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+#img.change {
+    background-image: url(img/saleimg3.jpg);
+}
+
+#health {
+    width: 200px;
+    border: 2px solid #000;
+    margin: 0 auto;
+}
+
+#health div {
+    height: 20px;
+    background: #f00;
+}
+
+.ctr {
+    width: 200px;
+    margin: 0 auto;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html{
+        font-size: 13.3333vw;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 5rem;
+        height: 5rem;
+        background: #00f;
+        margin: 0 auto;
+    }
+</style>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    var box = document.getElementById("box")
+
+    box.addEventListener('touchstart',() => {
+        console.log('touchstart')
+    })
+
+    box.addEventListener('touchmove',() => {
+        console.log('touchmove')
+    })
+
+    box.addEventListener('touchend',() => {
+        console.log('touchend')
+    })
+
+    box.addEventListener('click',(event)=>{
+        event.preventDefault()
+        console.log('tap')
+        
+    })
+</script>
+</html>

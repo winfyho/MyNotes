@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<style>
+    li {
+        width: 400px;
+        border: 1px solid #000;
+        margin: 8px;
+    }
+    
+    .v-enter,
+    .v-leave-to {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    
+    .v-enter-active,
+    .v-leave-active {
+        transition: all 1s ease;
+    }
+    
+    .v-move {
+        transition: all 0.5s ease;
+    }
+    
+    .v-leave-active {
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="id">
+        <input type="button" value="add" @click="add">
+        <!-- <ul> -->
+        <!-- appear为出现的动画，tag为包裹标签 -->
+        <transition-group appear tag="ul">
+            <li v-for="(item,i) in list" :key="item.id" @click="del(i)">{{item.id}} {{item.name}}</li>
+
+        </transition-group>
+        <!-- </ul> -->
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                id: 0,
+                list: [{
+                    id: 1,
+                    name: "he"
+                }, {
+                    id: 2,
+                    name: "jason"
+                }, {
+                    id: 3,
+                    name: "aga"
+                }, {
+                    id: 4,
+                    name: "winy"
+                }, ]
+            },
+            methods: {
+                add() {
+                    this.list.push({
+                        id: this.id,
+                        name: "test"
+                    })
+                },
+                del(i) {
+                    this.list.splice(i, 1);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

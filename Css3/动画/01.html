@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #app {
+        width: 100%;
+        height: 100%;
+    }
+
+    .loading {
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+
+        background: #00809D;
+    }
+
+    .loading>div {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+
+    .loading .bar {
+        transform: translateX(-50%) translateY(-10%);
+        width: 300px;
+        height: 16px;
+        border-radius: 15px;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .loading .bar .inner {
+        width: 0%;
+        height: 100%;
+        background: #07C160;
+        transition: all 2s linear;
+    }
+
+    .loading .person {
+        position: relative;
+        transform: translateX(-50%) translateY(-110%);
+        width: 140px;
+        height: 150px;
+        border-radius: 30px;
+        border-top-left-radius: 45px;
+        border-top-right-radius: 45px;
+        background: #EAAE01;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: jumping .8s ease infinite alternate;
+
+    }
+    .loading .person .mouth{
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border-radius: 50%;
+        animation: mouth .8s ease infinite alternate;
+    }
+
+    .loading .person .eye {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 0 13px;
+        margin-top: 20px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loading .person .eye .eyeball {
+        display: block;
+        width: 14px;
+        height: 14px;
+        background: #000;
+        border-radius: 50%;
+        transform: translateX(-8px);
+        animation: eyeball 1s linear infinite alternate;
+
+    }
+
+    @keyframes jumping {
+        0% {
+            transform: translateX(-50%) translateY(-110%);
+        }
+        /* 50%{
+            transform: translateX(-50%) translateY(-110%);
+        } */
+        100% {
+            transform: translateX(-50%) translateY(-122%);
+        }
+    }
+
+    @keyframes eyeball {
+        0% {
+            transform: translateX(-8px)
+        }
+
+        50% {
+            transform: translateX(0)
+        }
+
+        100% {
+            transform: translateX(8px)
+        }
+    }
+    @keyframes mouth {
+        0% {
+            width: 20px;
+            height: 20px;
+        }
+
+        50% {
+            width: 20px;
+            height: 20px;
+        }
+
+        100% {
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div class="loading">
+            <div class="person">
+                <div class="eye">
+                    <i class="eyeball"></i>
+                </div>
+                <div class="eye">
+                    <i class="eyeball"></i>
+                </div>
+
+                <div class="mouth"></div>
+            </div>
+            <div class="bar">
+                <div class="inner"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    const bar = document.getElementsByClassName('inner')[0]
+    setTimeout(() => {
+        bar.style.width = '90%'
+
+    }, 100);
+    setTimeout(() => {
+        bar.style.width = '100%'
+    }, 500);
+</script>
+
+</html>

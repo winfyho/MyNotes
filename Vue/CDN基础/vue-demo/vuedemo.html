@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="vue">
+        <div id="img" v-bind:class="{change:!end}"></div>
+
+        <div id="health">
+            <div v-bind:style="{
+                width:health+'%'
+            }"></div>
+        </div>
+
+        <div class="ctr">
+            <button @click="punch" v-show="!end">使劲敲</button>
+            <button @click="restart">重新开始</button>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#vue",
+        data: {
+            health: 100,
+            end: false,
+        },
+        methods: {
+            punch: function() {
+                this.health -= 10;
+                if (this.health <= 0) {
+                    this.end = true;
+                }
+            },
+            restart: function() {
+                this.health = 100;
+                this.end = false;
+            }
+        },
+        computed: {
+
+        }
+    });
+</script>
+
+</html>
